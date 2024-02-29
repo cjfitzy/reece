@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls"
-                sh "docker build -t cjfitzy89/task1  || true"
+                sh "docker build -t cjfitzy89/task1 . || true"
             }
         }
         stage ("Run Container"){
