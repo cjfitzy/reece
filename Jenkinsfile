@@ -14,12 +14,12 @@ pipeline {
             steps{
                 sh "pwd"
                 sh "ls"
-                sh "docker build -t cjfitzy89/task1 . || true"
+                sh "sudo docker build -t cjfitzy89/task1 . || true"
             }
         }
         stage ("Run Container"){
             steps{
-                sh "docker run -d -p 80:5500 --name test cjfitzy89/task1 || true"
+                sh "sudo docker run -d -p 80:5500 --name test cjfitzy89/task1 || true"
             }
         }
 
