@@ -5,13 +5,15 @@ pipeline {
             steps{
                 echo "Building"
                 sh "docker rm -f \$(docker ps -aq) || true"
-                sh "docker rmi -f \$(docker images -q) || true"
+                sh "docker rmi -f \$(docker images) || true"
                 sh "docker images"
                 sh "docker ps"
             }
         }
         stage ("Build"){
             steps{
+                sh "pwd"
+                sh "ls"
                 sh "docker build -t cjfitzy89/task1  || true"
             }
         }
